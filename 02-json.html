@@ -1,17 +1,39 @@
-data = [
-    {
-        name: 'Jean',
-        projet: 'alpine.js',
-        url: 'https://alpinejs.dev',
-    },
-    {
-        name: 'Maxime',
-        projet: 'tailwindcss',
-        url: 'https://tailwindcss.com',
-    },
-    {
-        name: 'Adam',
-        projet: 'lavarel',
-        url: 'https://laravel.com',
-    }
-]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>JSON</h1>
+    <ul x-data="{
+        data: [
+            {
+                name: 'Jean',
+                projet: 'Alpine.js',
+                url: 'https://alpinejs.dev/'
+            },
+            {
+                name: 'Maxime',
+                projet: 'Tailwind CSS',
+                url: 'https://tailwindcss.com/'
+            },
+            {
+                name: 'Adam',
+                projet: 'Laravel',
+                url: 'https://laravel.com/'
+            }
+        ],
+    }">
+        <template >
+            <li>
+                <span x-text="obj.name">name</span> :
+                <a x-text="obj.url">Projet</a>
+            </li>
+        </template>
+    </ul>
+</body>
+</html>
